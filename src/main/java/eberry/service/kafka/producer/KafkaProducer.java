@@ -1,4 +1,4 @@
-package com.netsurfingzone.producer;
+package eberry.service.kafka.producer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.netsurfingzone.constant.ApplicationConstant;
-import com.netsurfingzone.dto.Student;
+import eberry.service.kafka.constant.ApplicationConstant;
+import eberry.service.kafka.dto.Student;
 
 @RestController
 @RequestMapping("/produce")

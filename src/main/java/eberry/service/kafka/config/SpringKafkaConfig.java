@@ -1,8 +1,9 @@
-package com.netsurfingzone.config;
+package eberry.service.kafka.config;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import eberry.service.kafka.constant.ApplicationConstant;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -19,8 +20,7 @@ import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
 import org.springframework.kafka.support.serializer.JsonSerializer;
 
-import com.netsurfingzone.constant.ApplicationConstant;
-import com.netsurfingzone.dto.Student;
+import eberry.service.kafka.dto.Student;
 
 @Configuration
 @EnableKafka

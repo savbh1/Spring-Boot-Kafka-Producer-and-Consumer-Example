@@ -1,5 +1,6 @@
-package com.netsurfingzone.consumer;
+package eberry.service.kafka.consumer;
 
+import eberry.service.kafka.constant.ApplicationConstant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -7,8 +8,7 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.netsurfingzone.constant.ApplicationConstant;
-import com.netsurfingzone.dto.Student;
+import eberry.service.kafka.dto.Student;
 
 @Component
 public class KafkaConsumer {

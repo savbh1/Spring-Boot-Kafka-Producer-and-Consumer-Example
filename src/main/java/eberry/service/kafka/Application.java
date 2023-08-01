@@ -1,14 +1,14 @@
-package com.netsurfingzone.main;
+package eberry.service.kafka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "com.netsurfingzone.*")
-public class SpringMain {
+@ComponentScan(basePackages = "eberry.service.kafka.*")
+public class Application {
 	public static void main(String[] args) {
-		SpringApplication.run(SpringMain.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }

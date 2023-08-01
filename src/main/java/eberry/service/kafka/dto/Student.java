@@ -1,4 +1,4 @@
-package com.netsurfingzone.dto;
+package eberry.service.kafka.dto;
 
 public class Student {
 	private Long id;
