@@ -1,4 +1,4 @@
-package eberry.service.kafka.config;
+package eberry.service.kafka.configuration;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,11 +20,11 @@ import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
 import org.springframework.kafka.support.serializer.JsonSerializer;
 
-import eberry.service.kafka.dto.Student;
+import eberry.service.kafka.model.Student;
 
 @Configuration
 @EnableKafka
-public class SpringKafkaConfig {
+public class SpringKafkaConfiguration {
 
 	@Bean
 	public ProducerFactory<String, Object> producerFactory() {
@@ -32,8 +32,8 @@ public class SpringKafkaConfig {
 		configMap.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, ApplicationConstant.KAFKA_LOCAL_SERVER_CONFIG);
 		configMap.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
 		configMap.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
-		configMap.put(JsonDeserializer.TRUSTED_PACKAGES, "com.netsurfingzone.dto");
-		return new DefaultKafkaProducerFactory<String, Object>(configMap);
+		configMap.put(JsonDeserializer.TRUSTED_PACKAGES, "eberry.service.kafka.model");
+		return new DefaultKafkaProducerFactory<>(configMap);
 	}
 
 	@Bean
@@ -48,13 +48,13 @@ public class SpringKafkaConfig {
 		configMap.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
 		configMap.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
 		configMap.put(ConsumerConfig.GROUP_ID_CONFIG, ApplicationConstant.GROUP_ID_JSON);
-		configMap.put(JsonDeserializer.TRUSTED_PACKAGES, "com.netsurfingzone.dto");
+		configMap.put(JsonDeserializer.TRUSTED_PACKAGES, "eberry.service.kafka.model");
 		return new DefaultKafkaConsumerFactory<>(configMap);
 	}
 
 	@Bean
 	public ConcurrentKafkaListenerContainerFactory<String, Student> kafkaListenerContainerFactory() {
-		ConcurrentKafkaListenerContainerFactory<String, Student> factory = new ConcurrentKafkaListenerContainerFactory<String, Student>();
+		ConcurrentKafkaListenerContainerFactory<String, Student> factory = new ConcurrentKafkaListenerContainerFactory<>();
 		factory.setConsumerFactory(consumerFactory());
 		return factory;
 	}

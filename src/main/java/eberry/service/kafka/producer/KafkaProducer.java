@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import eberry.service.kafka.constant.ApplicationConstant;
-import eberry.service.kafka.dto.Student;
+import eberry.service.kafka.model.Student;
 
 @RestController
 @RequestMapping("/produce")

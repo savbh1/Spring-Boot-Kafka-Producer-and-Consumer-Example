@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import eberry.service.kafka.dto.Student;
+import eberry.service.kafka.model.Student;
 
 @Component
 public class KafkaConsumer {
